@@ -8,8 +8,13 @@ a.navbar-brand {
 }
 
 a {
-  color: #0077cc;
+    font-weight: 500;
+    color: #7b8bf8;
 }
+
+    a:hover {
+        color: #5c6ddb;
+    }
 
 .btn-primary {
   color: #fff;

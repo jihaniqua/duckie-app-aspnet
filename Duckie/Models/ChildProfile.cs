@@ -13,5 +13,6 @@ namespace Duckie.Models
 
         // child references
         public List<Milestone>? Milestones { get; set; }
+        public List<Journal>? Journals { get; set; }
     }
 }

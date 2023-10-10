@@ -18,6 +18,7 @@ namespace Duckie.Models
         public int ChildProfileId { get; set; }
 
         // parent reference
+        [Display(Name = "Child")]
         public ChildProfile? ChildProfile { get; set; }
     }
 }

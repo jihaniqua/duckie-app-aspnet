@@ -1,0 +1,35 @@
+﻿@model Duckie.Models.Journal
+
+@{
+    ViewData["Title"] = "Entry Details";
+}
+
+<h1>Entry Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JournalDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JournalDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JournalBody)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JournalBody)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ChildProfile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ChildProfile.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.JournalId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

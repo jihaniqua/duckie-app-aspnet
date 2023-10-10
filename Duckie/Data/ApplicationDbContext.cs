@@ -12,5 +12,6 @@ namespace Duckie.Data
         }
         public DbSet<Duckie.Models.ChildProfile> ChildProfile { get; set; } = default!;
         public DbSet<Duckie.Models.Milestone> Milestone { get; set; } = default!;
+        public DbSet<Duckie.Models.Journal> Journal { get; set; } = default!;
     }
 }

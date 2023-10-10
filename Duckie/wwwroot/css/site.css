@@ -26,6 +26,10 @@ a {
     color: #7b8bf8;
 }
 
+    a:hover {
+        color: #5c6ddb;
+    }
+
 .btn-primary {
     font-weight: 500;
     color: #fff;
@@ -44,4 +48,10 @@ nav {
 
 .form-group {
     padding-bottom: 20px;
+}
+
+.table {
+    --bs-table-striped-bg: rgba(123, 139, 248, 0.075);
+    --bs-table-active-bg: rgba(123, 139, 248, 0.1);
+    --bs-table-hover-bg: rgba(123, 139, 248, 0.15);
 }

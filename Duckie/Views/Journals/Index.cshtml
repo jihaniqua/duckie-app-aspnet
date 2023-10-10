@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Duckie.Models.Journal>
+
+@{
+    ViewData["Title"] = "Journal";
+}
+
+<div class="row pb-5">
+    <div class="col-md-8">
+        <h1>Journal Entries</h1>
+        <p>Explore and manage your personal entries about moments and memories with your child.</p>
+    </div>
+    <div class="col-md-4 align-self-md-center text-md-end">
+        <p>
+            <a asp-action="Create" class="btn btn-primary">Add Entry</a>
+        </p>
+    </div>
+</div>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JournalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JournalBody)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChildProfile)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JournalDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JournalBody)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildProfile.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.JournalId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.JournalId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.JournalId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

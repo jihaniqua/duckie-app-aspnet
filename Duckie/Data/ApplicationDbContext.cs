@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Duckie.Models;
 
 namespace Duckie.Data
 {
@@ -9,5 +10,6 @@ namespace Duckie.Data
             : base(options)
         {
         }
+        public DbSet<Duckie.Models.ChildProfile> ChildProfile { get; set; } = default!;
     }
 }

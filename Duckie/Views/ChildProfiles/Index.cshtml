@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Duckie.Models.ChildProfile>
+
+@{
+    ViewData["Title"] = "Children";
+}
+
+<div class="row pb-5">
+    <div class="col-md-8">
+        <h1>Your Children</h1>
+        <p>Create your child's profile to keep track of their information.</p>
+    </div>
+    <div class="col-md-4 align-self-md-center text-md-end">
+        <p>
+            <a asp-action="Create" class="btn btn-primary">Add Child</a>
+        </p>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birthdate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birthdate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ChildProfileId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ChildProfileId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ChildProfileId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

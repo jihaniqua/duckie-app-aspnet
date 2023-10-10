@@ -21,6 +21,27 @@ body {
   margin-bottom: 60px;
 }
 
+a {
+    font-weight:500;
+    color: #7b8bf8;
+}
+
+.btn-primary {
+    font-weight: 500;
+    color: #fff;
+    background-color: #222;
+    border-color: #222;
+}
+
+    .btn-primary:hover {
+        background-color: #6778ea;
+        border-color: #6778ea;
+    }
+
+nav {
+    background-color: #8e9cf9;
+}
+
 .form-group {
     padding-bottom: 20px;
 }

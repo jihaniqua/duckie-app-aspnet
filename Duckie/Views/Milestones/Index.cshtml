@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Duckie.Models.Milestone>
+
+@{
+    ViewData["Title"] = "Milestones";
+}
+
+<div class="row pb-5">
+    <div class="col-md-8">
+        <h1>Milestones Achieved</h1>
+        <p>Celebrate and document pivotal moments of your child as they grow.</p>
+    </div>
+    <div class="col-md-4 align-self-md-center text-md-end">
+        <p>
+            <a asp-action="Create" class="btn btn-primary">Add Milestone</a>
+        </p>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MilestoneName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MilestoneDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChildProfile)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MilestoneName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MilestoneDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildProfile.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MilestoneID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MilestoneID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MilestoneID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

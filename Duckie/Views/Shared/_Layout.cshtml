@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Duckie: A Keepsake App for Parents</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Duckie.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/bonus.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Duckie</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -35,21 +37,19 @@
         </nav>
     </header>
     <div class="container py-5">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3 mb-5">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="d-flex flex-row container justify-content-between">
-            <div>
-                Duckie by Jihan Duerme 200523101 - COMP 2084 Server-Side Scripting-ASP.NET Assignment
-            </div>
-           <div>
-               <a href="https://github.com/jihaniqua/comp2084-duckie">GitHub</a>
-            </div>
+        <div class="container d-md-flex flex-row text-center justify-content-md-between align-items-start">
+            <p class="text-muted">COMP 2084 ASP.NET Assignment</p>
+            <p class="text-muted">Duckie by Jihan Duerme 200523101</p>
+            <a href="https://github.com/jihaniqua/comp2084-duckie"><i class="bi bi-github fa-2x"></i></a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

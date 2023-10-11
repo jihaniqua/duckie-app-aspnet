@@ -15,51 +15,24 @@
         </p>
     </div>
 </div>
-<table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.MilestoneName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MilestoneDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Comments)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Photo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ChildProfile)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MilestoneName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MilestoneDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comments)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Photo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChildProfile.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.MilestoneID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MilestoneID">Details</a> |
+
+<div class="milestones-grid">
+    @foreach (var item in Model) {
+    <div class="milestones-card">
+        <div class="milestones-card-top">
+            <p class="card-chip"><small>@Html.DisplayFor(modelItem => item.ChildProfile.Name)</small></p>
+            <h3>@Html.DisplayFor(modelItem => item.MilestoneName)</h3>
+                <p><small>@Html.DisplayFor(modelItem => item.MilestoneDate)</small></p>
+            <p>@Html.DisplayFor(modelItem => item.Comments)</p>
+            <p>@Html.DisplayFor(modelItem => item.Photo)</p>
+        </div>
+        <div class="milestones-card-bottom">
+            <div class="card-links">
+                <a asp-action="Details" asp-route-id="@item.MilestoneID">Details</a>
+                <a asp-action="Edit" asp-route-id="@item.MilestoneID">Edit</a>
                 <a asp-action="Delete" asp-route-id="@item.MilestoneID">Delete</a>
-            </td>
-        </tr>
+            </div>
+        </div>
+    </div>
 }
-    </tbody>
-</table>
+</div>

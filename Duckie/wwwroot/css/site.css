@@ -18,40 +18,11 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-}
-
-a {
-    font-weight:500;
-    color: #7b8bf8;
-}
-
-    a:hover {
-        color: #5c6ddb;
-    }
-
-.btn-primary {
-    font-weight: 500;
-    color: #fff;
-    background-color: #222;
-    border-color: #222;
-}
-
-    .btn-primary:hover {
-        background-color: #6778ea;
-        border-color: #6778ea;
-    }
-
-nav {
-    background-color: #8e9cf9;
-}
-
-.form-group {
-    padding-bottom: 20px;
+    min-height: 100vh;
 }
 
 .table {
     --bs-table-striped-bg: rgba(123, 139, 248, 0.075);
     --bs-table-active-bg: rgba(123, 139, 248, 0.1);
     --bs-table-hover-bg: rgba(123, 139, 248, 0.15);
-}
+} 

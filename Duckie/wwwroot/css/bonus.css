@@ -1,0 +1,173 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+/* Colors */
+:root {
+    --white: #fff;
+    --d-blue: #252aba;
+    --blue: #749ef2;
+    --purple: #5561cd;
+    --mint: #bcedd7;
+    --green: #3a6750;
+    --orange: #fc8c76;
+    --yellow: #fbc048;
+    --brown: #995647;
+    --l-orange: #ffeadd;
+}
+
+/* Font styles */
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav div > a:first-of-type, h1,h3, h5 {
+    font-family: "Calistoga";
+}
+
+h1 {
+    color: var(--d-blue);
+}
+
+/* General links and buttons */
+a {
+    color: var(--d-blue);
+}
+
+    a:hover {
+        color: var(--blue);
+    }
+
+i {
+    font-size: 28px;
+    color: var(--d-blue);
+}
+
+    i:hover {
+        color: var(--blue);
+    }
+
+.btn-primary {
+    color: #fff;
+    border-radius: 0.4rem;
+    background-color: var(--d-blue);
+    border-color: var(--d-blue);
+}
+
+    .btn-primary:hover {
+        background-color: var(--blue);
+        border-color: var(--blue);
+    }
+
+/* Milestones Grid */
+.milestones-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2%;
+    color: var(--white);
+}
+
+/* All cards */
+.milestones-card {
+    display:flex;
+    flex-direction: column;
+    width: 32%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 24px 30px 30px;
+    border-radius: 12px;
+}
+
+    /* 1st card */
+    .milestones-card:nth-child(4n+1) {
+        background-color: var(--blue);
+    }
+
+    /* 2nd card */
+    .milestones-card:nth-child(3n+2) {
+        background-color: var(--mint);
+        color: var(--green);
+    }
+
+    /* 3rd card */
+    .milestones-card:nth-child(2n+3) {
+        background-color: var(--orange);
+    }
+
+    /* 4th card */
+    .milestones-card:nth-child(1n+4) {
+        background-color: var(--yellow);
+        color: var(--brown);
+    }
+
+    /* 5th card */
+    .milestones-card:nth-child(5n) {
+        background-color: var(--purple);
+        color: var(--white);
+    }
+
+/* Child chip */
+.card-chip {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    msrgin-bottom: 4px;
+}
+
+.card-links a {
+    padding: 4px 8px 6px;
+    border-radius: 0.4rem;
+    background-color: var(--white);
+    color: var(--d-blue);
+    text-decoration: none;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Home - App features */
+.key-1 {
+    grid-area: a;
+}
+
+.key-2 {
+    grid-area: b;
+}
+
+.key-3 {
+    grid-area: c;
+}
+
+.key-1, .key-2, .key-3 {
+    margin: 8px;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: var(--l-orange);
+    color: var(--orange);
+}
+
+.key-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "a b c";
+}
+
+/* Bootstrap forms */
+.form-group {
+    padding-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+    .milestones-card {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    
+    .key-grid {
+        display: block;
+    }
+
+    .key-grid > div {
+        padding-bottom: 20px;
+    }
+}

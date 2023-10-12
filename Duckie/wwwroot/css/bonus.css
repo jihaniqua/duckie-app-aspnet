@@ -11,12 +11,15 @@
     --orange: #fc8c76;
     --yellow: #fbc048;
     --brown: #995647;
-    --l-orange: #ffeadd;
+    --l-blue: #c7d8fa;
+    --bg: #edf3ff;
+    --gray: #6c757d;
 }
 
 /* Font styles */
-html {
+*, html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.4;
 }
 
 nav div > a:first-of-type, h1,h3, h5 {
@@ -24,7 +27,22 @@ nav div > a:first-of-type, h1,h3, h5 {
 }
 
 h1 {
+    font-size: 4rem;
     color: var(--d-blue);
+}
+
+h5 {
+    color: var(--d-blue);
+}
+
+/* Background color */
+body {
+    background-color: var(--bg);
+}
+
+/* Nav Logo */
+nav img {
+    max-height: 40px;
 }
 
 /* General links and buttons */
@@ -110,7 +128,7 @@ i {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
-    msrgin-bottom: 4px;
+    margin-bottom: 4px;
 }
 
 .card-links a {
@@ -140,8 +158,8 @@ i {
     margin: 8px;
     padding: 30px;
     border-radius: 12px;
-    background-color: var(--l-orange);
-    color: var(--orange);
+    background-color: var(--white);
+    color: var(--blue);
 }
 
 .key-grid {
@@ -150,6 +168,28 @@ i {
     grid-template-rows: 1fr;
     grid-template-areas:
         "a b c";
+}
+
+.key-grid p {
+    color: var(--gray);
+}
+
+/* Home - Image */
+.home-img {
+    width: 100%;
+    height: auto;
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid var(--blue);
+}
+.footer > div {
+    padding: 12px 0 16px 0;
+}
+footer p {
+    align-self: center;
+    margin: 0;
 }
 
 /* Bootstrap forms */
@@ -169,5 +209,9 @@ i {
 
     .key-grid > div {
         padding-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
     }
 }

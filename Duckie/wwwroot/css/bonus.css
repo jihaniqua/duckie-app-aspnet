@@ -41,8 +41,8 @@ body {
 }
 
 /* Nav Logo */
-nav img {
-    max-height: 40px;
+nav a img {
+    max-height: 30px;
 }
 
 /* General links and buttons */

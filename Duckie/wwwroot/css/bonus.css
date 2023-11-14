@@ -3,16 +3,15 @@
 /* Colors */
 :root {
     --white: #fff;
-    --d-blue: #252aba;
-    --blue: #749ef2;
-    --purple: #5561cd;
+    --primary-blue: #252aba;
+    --secondary-blue: #749ef2;
+    --tertiary-blue: #5561cd;
     --mint: #bcedd7;
     --green: #3a6750;
-    --orange: #fc8c76;
+    --peach: #fc8c76;
     --yellow: #fbc048;
     --brown: #995647;
-    --l-blue: #c7d8fa;
-    --bg: #edf3ff;
+    --bg-blue: #edf3ff;
     --gray: #6c757d;
 }
 
@@ -28,16 +27,16 @@ nav div > a:first-of-type, h1,h3, h5 {
 
 h1 {
     font-size: 4rem;
-    color: var(--d-blue);
+    color: var(--primary-blue);
 }
 
 h5 {
-    color: var(--d-blue);
+    color: var(--primary-blue);
 }
 
 /* Background color */
 body {
-    background-color: var(--bg);
+    background-color: var(--bg-blue);
 }
 
 /* Nav Logo */
@@ -47,32 +46,32 @@ nav a img {
 
 /* General links and buttons */
 a {
-    color: var(--d-blue);
+    color: var(--primary-blue);
 }
 
     a:hover {
-        color: var(--blue);
+        color: var(--secondary-blue);
     }
 
 i {
     font-size: 28px;
-    color: var(--d-blue);
+    color: var(--primary-blue);
 }
 
     i:hover {
-        color: var(--blue);
+        color: var(--secondary-blue);
     }
 
 .btn-primary {
     color: #fff;
     border-radius: 0.4rem;
-    background-color: var(--d-blue);
-    border-color: var(--d-blue);
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
     .btn-primary:hover {
-        background-color: var(--blue);
-        border-color: var(--blue);
+        background-color: var(--secondary-blue);
+        border-color: var(--secondary-blue);
     }
 
 /* Milestones Grid */
@@ -96,30 +95,30 @@ i {
 }
 
     /* 1st card */
-    .milestones-card:nth-child(4n+1) {
-        background-color: var(--blue);
+    .milestones-card:nth-child(5n-4) {
+        background-color: var(--secondary-blue);
     }
 
     /* 2nd card */
-    .milestones-card:nth-child(3n+2) {
+    .milestones-card:nth-child(5n-3) {
         background-color: var(--mint);
         color: var(--green);
     }
 
     /* 3rd card */
-    .milestones-card:nth-child(2n+3) {
-        background-color: var(--orange);
+    .milestones-card:nth-child(5n-2) {
+        background-color: var(--peach);
     }
 
     /* 4th card */
-    .milestones-card:nth-child(1n+4) {
+    .milestones-card:nth-child(5n-1) {
         background-color: var(--yellow);
         color: var(--brown);
     }
 
     /* 5th card */
-    .milestones-card:nth-child(5n) {
-        background-color: var(--purple);
+    .milestones-card:nth-child(5n-5) {
+        background-color: var(--tertiary-blue);
         color: var(--white);
     }
 
@@ -135,7 +134,7 @@ i {
     padding: 4px 8px 6px;
     border-radius: 0.4rem;
     background-color: var(--white);
-    color: var(--d-blue);
+    color: var(--primary-blue);
     text-decoration: none;
     text-decoration: none;
     font-weight: 600;
@@ -159,7 +158,7 @@ i {
     padding: 30px;
     border-radius: 12px;
     background-color: var(--white);
-    color: var(--blue);
+    color: var(--secondary-blue);
 }
 
 .key-grid {
@@ -182,7 +181,7 @@ i {
 
 /* Footer */
 .footer {
-    border-top: 1px solid var(--blue);
+    border-top: 1px solid var(--secondary-blue);
 }
 .footer > div {
     padding: 12px 0 16px 0;

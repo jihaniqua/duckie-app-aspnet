@@ -16,7 +16,7 @@ namespace Duckie.Models
 
         public string Comments { get; set; }
 
-        public string Photo { get; set; }
+        public string? Photo { get; set; }
 
         [Required]
         [Display(Name = "Child")]

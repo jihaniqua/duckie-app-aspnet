@@ -25,4 +25,10 @@ body {
     --bs-table-striped-bg: rgba(123, 139, 248, 0.075);
     --bs-table-active-bg: rgba(123, 139, 248, 0.1);
     --bs-table-hover-bg: rgba(123, 139, 248, 0.15);
-} 
+}
+
+.preview {
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 12px;
+}

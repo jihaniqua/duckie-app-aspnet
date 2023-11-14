@@ -48,7 +48,7 @@ namespace Duckie.Controllers
         // GET: Milestones/Create
         public IActionResult Create()
         {
-            ViewData["ChildProfileId"] = new SelectList(_context.ChildProfile, "ChildProfileId", "Name");
+            ViewData["ChildProfileId"] = new SelectList(_context.ChildProfile.OrderBy(c => c.Name), "ChildProfileId", "Name");
             return View();
         }
 
@@ -57,15 +57,20 @@ namespace Duckie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MilestoneID,MilestoneName,MilestoneDate,Comments,Photo,ChildProfileId")] Milestone milestone)
+        public async Task<IActionResult> Create([Bind("MilestoneID,MilestoneName,MilestoneDate,Comments,Photo,ChildProfileId")] Milestone milestone, IFormFile? Photo)
         {
             if (ModelState.IsValid)
             {
+                // Check for a photo upload and process it if there is one
+                if (Photo != null)
+                {
+                    milestone.Photo = UploadPhoto(Photo);
+                }
                 _context.Add(milestone);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ChildProfileId"] = new SelectList(_context.ChildProfile, "ChildProfileId", "Name", milestone.ChildProfileId);
+            ViewData["ChildProfileId"] = new SelectList(_context.ChildProfile.OrderBy(c => c.Name), "ChildProfileId", "Name", milestone.ChildProfileId);
             return View(milestone);
         }
 
@@ -91,7 +96,7 @@ namespace Duckie.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MilestoneID,MilestoneName,MilestoneDate,Comments,Photo,ChildProfileId")] Milestone milestone)
+        public async Task<IActionResult> Edit(int id, [Bind("MilestoneID,MilestoneName,MilestoneDate,Comments,Photo,ChildProfileId")] Milestone milestone, IFormFile? Photo, string? ExistingPhoto)
         {
             if (id != milestone.MilestoneID)
             {
@@ -102,6 +107,14 @@ namespace Duckie.Controllers
             {
                 try
                 {
+                    if (Photo != null)
+                    {
+                        milestone.Photo = UploadPhoto(Photo);
+                    }
+                    else
+                    {
+                        milestone.Photo = ExistingPhoto;
+                    }
                     _context.Update(milestone);
                     await _context.SaveChangesAsync();
                 }
@@ -155,14 +168,27 @@ namespace Duckie.Controllers
             {
                 _context.Milestone.Remove(milestone);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool MilestoneExists(int id)
         {
-          return (_context.Milestone?.Any(e => e.MilestoneID == id)).GetValueOrDefault();
+            return (_context.Milestone?.Any(e => e.MilestoneID == id)).GetValueOrDefault();
+        }
+
+        // Upload Milestone Photo method
+        private string UploadPhoto(IFormFile Photo)
+        {
+            var tempPath = Path.GetTempFileName();
+            var fileName = Guid.NewGuid().ToString() + "-" + Photo.FileName;
+            var uploadPath = System.IO.Directory.GetCurrentDirectory() + "\\wwwroot\\img\\milestone-images\\" + fileName;
+            using (var stream = new FileStream(uploadPath, FileMode.Create))
+            {
+                Photo.CopyTo(stream);
+            }
+            return fileName;
         }
     }
 }

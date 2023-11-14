@@ -24,7 +24,12 @@
             <h3>@Html.DisplayFor(modelItem => item.MilestoneName)</h3>
                 <p><small>@Html.DisplayFor(modelItem => item.MilestoneDate)</small></p>
             <p>@Html.DisplayFor(modelItem => item.Comments)</p>
-            <p>@Html.DisplayFor(modelItem => item.Photo)</p>
+            <p>
+                @if (item.Photo != null)
+                {
+                    <img src="~/img/milestone-images/@item.Photo" alt="Milestone Photo" class="preview"/>        
+                }
+            </p>
         </div>
         <div class="milestones-card-bottom">
             <div class="card-links">

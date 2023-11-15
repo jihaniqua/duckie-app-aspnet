@@ -10,9 +10,12 @@
         <p>Explore and manage your personal entries about moments and memories with your child.</p>
     </div>
     <div class="col-md-4 align-self-md-center text-md-end">
-        <p>
-            <a asp-action="Create" class="btn btn-primary">Add Entry</a>
-        </p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <p>
+                <a asp-action="Create" class="btn btn-primary">Add Entry</a>
+            </p>
+        }
     </div>
 </div>
 <table class="table table-striped table-hover">
@@ -43,9 +46,15 @@
                 @Html.DisplayFor(modelItem => item.ChildProfile.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.JournalId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.JournalId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.JournalId">Delete</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-action="Edit" asp-route-id="@item.JournalId">Edit</a>
+                }
+                <a asp-action="Details" asp-route-id="@item.JournalId">Details </a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-action="Delete" asp-route-id="@item.JournalId">Delete</a>
+                }
             </td>
         </tr>
 }

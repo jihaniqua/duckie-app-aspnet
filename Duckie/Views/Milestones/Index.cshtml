@@ -10,9 +10,12 @@
         <p>Celebrate and document pivotal moments of your child as they grow.</p>
     </div>
     <div class="col-md-4 align-self-md-center text-md-end">
-        <p>
-            <a asp-action="Create" class="btn btn-primary">Add Milestone</a>
-        </p>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <p>
+                <a asp-action="Create" class="btn btn-primary">Add Milestone</a>
+            </p>
+        }
     </div>
 </div>
 
@@ -34,8 +37,11 @@
         <div class="milestones-card-bottom">
             <div class="card-links">
                 <a asp-action="Details" asp-route-id="@item.MilestoneID">Details</a>
-                <a asp-action="Edit" asp-route-id="@item.MilestoneID">Edit</a>
-                <a asp-action="Delete" asp-route-id="@item.MilestoneID">Delete</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-action="Edit" asp-route-id="@item.MilestoneID">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.MilestoneID">Delete</a>
+                }
             </div>
         </div>
     </div>

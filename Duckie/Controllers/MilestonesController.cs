@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Duckie.Data;
 using Duckie.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Duckie.Controllers
 {
+    [Authorize]
     public class MilestonesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -19,6 +21,7 @@ namespace Duckie.Controllers
             _context = context;
         }
 
+        [AllowAnonymous]
         // GET: Milestones
         public async Task<IActionResult> Index()
         {
@@ -26,6 +29,7 @@ namespace Duckie.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        [AllowAnonymous]
         // GET: Milestones/Details/5
         public async Task<IActionResult> Details(int? id)
         {

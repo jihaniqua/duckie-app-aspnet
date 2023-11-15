@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Duckie.Data;
 using Duckie.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Duckie.Controllers
 {
+    [Authorize]
     public class ChildProfilesController : Controller
     {
         private readonly ApplicationDbContext _context;

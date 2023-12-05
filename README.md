@@ -8,7 +8,14 @@ by Jihan Duerme
 The goal for this assignment is to create and execute tests for the Child Profiles Controllers within the app.
 - Added dependencies
 - Created 3 mock data
-- 3 GET & 3 POST Method tests for Edit
+- 3 GET & 3 POST test methods for Edit
+### Test Methods
+1. GET Edit - Returns Error if there's no Id given
+2. GET Edit - Returns Error if Id doesn't exist in the database
+3. GET Edit - Gets a ChildProfile object from database with matching values to model
+4. POST Edit - Returns Error if Id is different from the ChildProfileId
+5. POST Edit - Returns Error if Id doesn't exist in the database
+6. POST Edit  - Saves changes and redirects to Index of valid data
 
 ## Assignment requirements
 - Plan and create a new .NET Core MVC Web Application using C#

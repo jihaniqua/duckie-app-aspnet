@@ -74,13 +74,13 @@ namespace Duckie.Controllers
         {
             if (id == null || _context.ChildProfile == null)
             {
-                return NotFound();
+                return View("Error");
             }
 
             var childProfile = await _context.ChildProfile.FindAsync(id);
             if (childProfile == null)
             {
-                return NotFound();
+                return View("Error");
             }
             return View(childProfile);
         }
@@ -94,7 +94,7 @@ namespace Duckie.Controllers
         {
             if (id != childProfile.ChildProfileId)
             {
-                return NotFound();
+                return View("Error");
             }
 
             if (ModelState.IsValid)
@@ -108,7 +108,7 @@ namespace Duckie.Controllers
                 {
                     if (!ChildProfileExists(childProfile.ChildProfileId))
                     {
-                        return NotFound();
+                        return View("Error");
                     }
                     else
                     {

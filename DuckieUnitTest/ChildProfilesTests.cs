@@ -43,9 +43,9 @@ namespace DuckieUnitTest
             controller = new ChildProfilesController(_context);
         }
 
-        // GET Edit - No Id after Edit => /ChildProfiles/Edit
+        // GET Edit - Returns Error if there's no Id given
         [TestMethod]
-        public void GetEditNullIdReturnsError()
+        public void EditNullIdReturnsError()
         {
             // act
             var result = (ViewResult)controller.Edit(null).Result;
@@ -54,9 +54,9 @@ namespace DuckieUnitTest
             Assert.AreEqual("Error", result.ViewName);
         }
 
-        // GET Edit - With Id but doesn't exist in the ChildProfile table
+        // GET Edit - Returns Error if Id doesn't exist in the database
         [TestMethod]
-        public void GetEditNullChildProfileReturnsError()
+        public void EditGetNullDataReturnsError()
         {
             // act
             var result = (ViewResult)controller.Edit(12).Result;
@@ -65,9 +65,9 @@ namespace DuckieUnitTest
             Assert.AreEqual("Error", result.ViewName);
         }
 
-        // GET Edit - Id is valid
+        // GET Edit - Gets a ChildProfile object from database with matching values to model
         [TestMethod]
-        public void EditValidIdReturnsView()
+        public void EditValidIdReturnsProfile()
         {
             // arrange
             var validId = 910;
@@ -82,7 +82,7 @@ namespace DuckieUnitTest
             Assert.AreEqual(validProfile, result.Model);
         }
 
-        // POST Edit - Id is not the same as ChildProfileId
+        // POST Edit - Returns Error if Id is different from the ChildProfileId
         [TestMethod]
         public void EditInvalidIdReturnsError()
         {
@@ -98,9 +98,9 @@ namespace DuckieUnitTest
             Assert.AreEqual("Error", result.ViewName);
         }
 
-        // POST Edit - Id doesn't exist
+        // POST Edit - Returns Error if Id doesn't exist in the database
         [TestMethod]
-        public void EditNoProfileReturnsError()
+        public void EditPostNullDataReturnsError()
         {
             // arrange
             var noId = 1217;
@@ -113,9 +113,9 @@ namespace DuckieUnitTest
             Assert.AreEqual("Error", result.ViewName);
         }
 
-        // POST Edit  - Model of data is valid and changes are saved
+        // POST Edit  - Saves changes and redirects to Index of valid data
         [TestMethod]
-        public void EditValidModelReturnsView()
+        public void EditValidDataReturnsIndex()
         {
             // arrange
             var validId = 9;

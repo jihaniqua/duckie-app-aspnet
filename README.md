@@ -3,6 +3,13 @@
 Assignment for COMP 2084: "Server-Side Scripting-ASP.NET"
 by Jihan Duerme
 
+### Update (Dec 5, 2023)
+## Assignment 4 - Unit Testing
+The goal for this assignment is to create and execute tests for the Child Profiles Controllers within the app.
+- Added dependencies
+- Created 3 mock data
+- 3 GET & 3 POST Method tests for Edit
+
 ## Assignment requirements
 - Plan and create a new .NET Core MVC Web Application using C#
 - Integrate it with a SQL Server database to perform CRUD operations

@@ -30,6 +30,3 @@ would be nice to look back to whenever they want. Thirdly, it enables parents to
 
 ## Bonus 1 - Assignment 2
 Created my own CSS for the Milestones and some parts of the website like the homepage. However, I didn't get enough time to finish the rest of the pages. Instead of the default table, I made each item into cards for a better and more fun way to read the Milestones content. I also added a logo on the nav bar, and images and features list on the homepage. All custom CSS are inside wwwroot/css/bonus.css
-
-## Live site
-duckie.azurewebsites.net
